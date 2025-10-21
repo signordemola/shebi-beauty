@@ -11,7 +11,7 @@ const CustomLink = ({ href, firstText, secondText }: CustomLinkProps) => {
   return (
     <Link
       href={href}
-      className="group relative flex flex-col items-center border border-primary rounded-full overflow-hidden px-6"
+      className="group relative flex flex-col items-center border border-primary rounded-full overflow-hidden px-6 text-primary"
     >
       <span className="anim-text py-2 transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
         {firstText}

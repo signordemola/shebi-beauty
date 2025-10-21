@@ -38,3 +38,30 @@ export const socialLinks = [
     tag: "@shebi-beauty",
   },
 ];
+
+export const services = [
+  {
+    id: 1,
+    title: "Hair Styling",
+    description: "Professional cuts and styling",
+    image: "/images/luxury-hair-salon-styling.jpg",
+  },
+  {
+    id: 2,
+    title: "Facial Treatments",
+    description: "Rejuvenating skincare solutions",
+    image: "/images/luxury-facial-spa-treatment.jpg",
+  },
+  {
+    id: 3,
+    title: "Nail Art",
+    description: "Creative nail designs",
+    image: "/images/luxury-nail-art-salon.jpg",
+  },
+  {
+    id: 4,
+    title: "Makeup Services",
+    description: "Professional makeup application",
+    image: "/images/luxury-makeup-artist-salon.jpg",
+  },
+];

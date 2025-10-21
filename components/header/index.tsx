@@ -3,17 +3,33 @@
 import { navLinks, socialLinks } from "@/constants";
 import "./style.css";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "../ui/button";
 import CartIcon from "../cart-icon";
 import CustomLink from "../custom-link";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [scrolled, setScrolled] = useState<boolean>(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 100);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="py-8">
-      <div className="container mx-auto flex justify-between items-center">
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-white/80 backdrop-blur-md shadow-md py-4"
+          : "bg-transparent py-6"
+      }`}
+    >
+      <div className="container mx-auto px-4 lg:px-0 py-8 flex justify-between items-center lg:rounded-full">
         <Link href={`/`} className="font-serif">
           Shebi~Beauty
         </Link>
@@ -53,7 +69,7 @@ const Header = () => {
 
       {isOpen && (
         <div
-          className={`h-[85dvh] my-6 flex lg:hidden flex-col py-10 px-6 items-start justify-between overflow-hidden rounded-b-3xl bg-red-500 text-white ${
+          className={`h-[85dvh] flex lg:hidden flex-col py-10 px-6 items-start justify-between overflow-hidden rounded-b-3xl bg-red-500 text-white ${
             isOpen ? "menu-open" : "menu-closed"
           }`}
         >
