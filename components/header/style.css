@@ -1,0 +1,55 @@
+@keyframes slideInMenu {
+  from {
+    clip-path: inset(0 0 100% 0);
+  }
+  to {
+    clip-path: inset(0 0 0% 0);
+  }
+}
+
+@keyframes slideOutMenu {
+  from {
+    clip-path: inset(0 0 0% 0);
+  }
+  to {
+    clip-path: inset(0 0 100% 0);
+  }
+}
+
+@keyframes slideUpWord {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDownWord {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
+
+.menu-open {
+  animation: slideInMenu 1s cubic-bezier(0.98, -0.02, 0.41, 0.89) forwards;
+}
+
+.menu-closed {
+  animation: slideOutMenu 0.7s cubic-bezier(0.98, -0.02, 0.41, 0.89) forwards;
+}
+
+.word-enter {
+  animation: slideUpWord 0.7s ease-out forwards;
+}
+
+.word-exit {
+  animation: slideDownWord 0.5s ease-out forwards;
+}
+
+.hidden-word {
+  overflow: hidden;
+}
